@@ -1,15 +1,19 @@
 #include <stdio.h>
-#include <sys/ptrace.h>
 #include <unistd.h>
+#include <stdlib.h>
+
+#include <sys/ptrace.h>
 
 volatile int gdb_attached = 0;
 
-int main() {
-  while (gdb_attached == 0)
-    sleep(1);
-  int a = 2;
-  int b = 8;
-  int c = a + b;
-  printf("a = %d, b = %d, c = %d\n", a, b, c);
+int main(int argc, char** argv) {
+  //while (gdb_attached == 0)
+  //  sleep(1);
+	int num = atoi(argv[1]);
+  int aNumber = 2;
+  int bNumber = 8;
+  int cNumber = aNumber + bNumber;
+  printf("arg = %d\n", num);
+  printf("a = %d, b = %d, c = %d\n", aNumber, bNumber, cNumber);
   return 0;
 }

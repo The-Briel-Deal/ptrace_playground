@@ -1,4 +1,5 @@
 tracee
+tracee_min
 zig_tracer/.zig-cache/
 zig_tracer/zig-out/
 
